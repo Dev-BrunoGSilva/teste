@@ -1,5 +1,4 @@
 import { Text, View } from 'react-native';
-
 import { useSession } from '../../../utils/authContext';
 
 export default function Index() {

@@ -1,6 +1,6 @@
 import { Slot } from 'expo-router';
 import { SessionProvider } from '../utils/authContext';
-import '../global.css'
+import '../../global.css'
 
 export default function Root() {
   return (
