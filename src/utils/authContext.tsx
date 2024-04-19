@@ -26,12 +26,13 @@ export function useSession() {
 
 export function SessionProvider(props: React.PropsWithChildren) {
   const [[isLoading, session], setSession] = useStorageState('session');
-
+  console.log(session);
+  
   return (
     <AuthContext.Provider
       value={{
         signIn: () => {
-          setSession('xxx');
+          setSession('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX');
         },
         signOut: () => {
           setSession(null);
