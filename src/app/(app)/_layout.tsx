@@ -10,10 +10,12 @@ export default function AppLayout() {
       <Stack.Screen
         name="sign-in"
         options={{
+          headerShown: false,
           presentation: 'modal',
+          animation: 'ios'
         }}
       />
-      <Stack.Screen name="(root)"  options={{headerShown:false}} />
+      <Stack.Screen name="(root)"  options={{ headerShown:false }} />
     </Stack>
   );
 }

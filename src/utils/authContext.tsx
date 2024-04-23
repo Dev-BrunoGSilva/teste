@@ -32,7 +32,7 @@ export function SessionProvider(props: React.PropsWithChildren) {
     <AuthContext.Provider
       value={{
         signIn: () => {
-          setSession('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX');
+          setSession('');
         },
         signOut: () => {
           setSession(null);

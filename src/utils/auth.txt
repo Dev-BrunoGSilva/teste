@@ -1,0 +1,51 @@
+Athentication User:
+
+import axios from "axios";
+
+let headersList = {
+ "Authorization": "Token",
+ "Content-Type": "application/json" 
+}
+
+let bodyContent = JSON.stringify({
+  "email": "lorenatorres16@hotmail.com",
+  "senha": "518212aced"
+});
+
+let reqOptions = {
+  url: "https://app.sistemasircon.com.br/api/cliente/autenticar",
+  method: "POST",
+  headers: headersList,
+  data: bodyContent,
+}
+
+let response = await axios.request(reqOptions);
+
+Generate Token :
+
+import axios from "axios";
+
+let headersList = {
+ "clientId": "f504c731-56e6-49d3-bd1d-bb89c733b0d8",
+ "clientSecret": "4dee70ac-891c-479f-b258-c17dd1fb8758" 
+}
+
+let reqOptions = {
+  url: "https://app.sistemasircon.com.br/api/auth/token",
+  method: "POST",
+  headers: headersList,
+}
+
+let response = await axios.request(reqOptions);
+
+url: https://app.sistemasircon.com.br/api/auth/token 
+clientId: f504c731-56e6-49d3-bd1d-bb89c733b0d8
+clientSecret: 4dee70ac-891c-479f-b258-c17dd1fb8758
+
+response acess token: 
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJjb2RpZ29FbXByZXNhIjpudWxsLCJ2YWxpZGFkZVRva2VuIjoxOTI0OTE2NDAwMDAwfQ.aCKWImBtChu2ye5ebgBbXr-8RCUeJYE9l9_yIsjT-GI",
+  "tokenType": "JWT",
+  "expiresIn": "31/12/2030 00:00:00",
+  "companyCode": null
+}
