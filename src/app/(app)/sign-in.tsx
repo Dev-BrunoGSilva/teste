@@ -1,11 +1,15 @@
 import { router } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 
+import { useState } from "react";
 import { useSession } from "../../utils/authContext";
 import { Input } from "@//components/input";
 
 export default function SignIn() {
   const { signIn } = useSession();
+
+  const [ email, setEmail ] = useState<string>("");
+  const [ password, setPassword ] = useState<string>("");
 
   return (
     <View className="flex-1 justify-center items-center">
