@@ -1,7 +1,10 @@
-import { Stack } from 'expo-router';
+import { useSession } from '@//utils/authContext';
+import { Redirect, Stack } from 'expo-router';
+
+import { Text } from 'react-native';
 
 export const unstable_settings = {
-  initialRouteName: '(root)',
+  initialRouteName: 'sign-in',
 };
 
 export default function AppLayout() {
@@ -15,7 +18,6 @@ export default function AppLayout() {
           animation: 'ios'
         }}
       />
-      <Stack.Screen name="(root)"  options={{ headerShown:false }} />
     </Stack>
   );
 }

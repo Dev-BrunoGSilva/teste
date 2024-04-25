@@ -1,12 +1,13 @@
 import { Text, View } from 'react-native';
-import { useSession } from '../../../utils/authContext';
+import { useSession } from '@//utils/authContext';
 
-export default function Contato() {
+
+export default function Index() {
   const { signOut } = useSession();
   return (
-    <View className='flex-1 justify-center items-center bg-pink-500'>
+    <View className='bg-red-500' style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>
-        CadastroScreen
+        HomeScreen
       </Text>
       <Text
       className='font-bold text-4xl text-emerald-500'

@@ -1,6 +1,11 @@
 import React from 'react';
 import { useStorageState } from '../hooks/useStorageState';
 
+interface propsSessionProvider{
+  children: React.ReactNode
+  AUTHENTICATION_KEY?: string | null
+}
+
 const AuthContext = React.createContext<{
   signIn: () => void;
   signOut: () => void;
@@ -13,6 +18,8 @@ const AuthContext = React.createContext<{
   isLoading: false,
 });
 
+const AUTHENTICATION_KEY = process.env.EXPO_PRIVATE_API_CLIENT_KEY;
+
 export function useSession() {
   const value = React.useContext(AuthContext);
   if (process.env.NODE_ENV !== 'production') {
@@ -24,7 +31,7 @@ export function useSession() {
   return value;
 }
 
-export function SessionProvider(props: React.PropsWithChildren) {
+export function SessionProvider({children}: propsSessionProvider) {
   const [[isLoading, session], setSession] = useStorageState('session');
   console.log(session);
   
@@ -40,7 +47,8 @@ export function SessionProvider(props: React.PropsWithChildren) {
         session,
         isLoading,
       }}>
-      {props.children}
+        
+      {children}
     </AuthContext.Provider>
   );
 }
